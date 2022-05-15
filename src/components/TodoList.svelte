@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { todoItems } from '../store'
-  import type { Todo } from '../store'
-  import { onDestroy } from 'svelte';
-  import TodoItem from './TodoItem.svelte'
+	import { todoItems } from '../store';
+	import type { Todo } from '../store';
+	import { onDestroy } from 'svelte';
+	import TodoItem from './TodoItem.svelte';
 
-  let todos: Todo[]
+	let todos: Todo[];
 
-  const unsub = todoItems.subscribe(val => todos = val)
+	const unsub = todoItems.subscribe((val) => (todos = val));
 
-  onDestroy(unsub)
+	onDestroy(unsub);
 </script>
 
 {#each todos as todo}
-  <TodoItem todo={todo}></TodoItem>
+	<TodoItem {todo} />
 {/each}
