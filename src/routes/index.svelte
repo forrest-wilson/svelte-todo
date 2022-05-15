@@ -1,3 +1,9 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<script>
+import Toolbar from '../components/Toolbar.svelte';
+import TodoList from '../components/TodoList.svelte';
+</script>
+
+<div class="container mx-auto m-4">
+  <Toolbar />
+  <TodoList />
+</div>
