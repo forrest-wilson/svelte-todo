@@ -6,7 +6,9 @@
 
 	let todos: Todo[];
 
-	const unsub = todoItems.subscribe((val) => (todos = val));
+	const unsub = todoItems.subscribe((val) => {
+		todos = val;
+	});
 
 	onDestroy(unsub);
 </script>
