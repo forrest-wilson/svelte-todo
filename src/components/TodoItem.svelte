@@ -21,7 +21,7 @@
 <div class="border rounded mb-2">
 	<div class="p-4 flex">
 		<div class="flex-initial">
-			<p>{todo.text}</p>
+			<p class="text-black dark:text-white">{todo.text}</p>
 		</div>
 
 		<FlexSpacer />
