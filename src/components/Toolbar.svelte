@@ -20,6 +20,17 @@
 
 		addNewTodoDialog = false;
 	};
+
+	let handleEnter = (keypress: KeyboardEvent) => {
+		switch (keypress.key) {
+			case 'Enter':
+				addTask();
+				break;
+			case 'Escape':
+				addNewTodoDialog = false;
+				break;
+		}
+	};
 </script>
 
 <div class="flex flex-row mb-4 border-b-2 pb-2">
@@ -39,7 +50,14 @@
 		<div class="border rounded bg-white container p-8 absolute pos-center drop-shadow-xl">
 			<div class="block pb-4">
 				<span class="text-grey-700">Task</span>
-				<input bind:value={newTodo} type="text" class="mt-1 block w-full rounded" />
+				<!-- svelte-ignore a11y-autofocus -->
+				<input
+					on:keyup={handleEnter}
+					bind:value={newTodo}
+					type="text"
+					class="mt-1 block w-full rounded"
+					autofocus
+				/>
 			</div>
 
 			<div class="block">
