@@ -61,8 +61,6 @@
 
 	<FlexSpacer />
 
-	<!-- <input bind:value={darkMode} bind:checked={darkMode} type="checkbox" /> -->
-
 	<RoundedSwitch state={darkMode} on:checked={handleCheck} />
 </div>
 
