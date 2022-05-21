@@ -23,7 +23,7 @@
 >
 	<div class="p-4 flex items-center">
 		<div class="flex-initial">
-			<p class="text-zinc-900 dark:text-white ">{todo.text}</p>
+			<p class="text-zinc-700 dark:text-white font-medium">{todo.text}</p>
 		</div>
 
 		<FlexSpacer />
@@ -31,8 +31,10 @@
 		<div class="flex-initial">
 			<button
 				class="text-red-500 hover:text-white hover:bg-red-500 rounded-lg px-4 py-2 transition-all"
-				on:click={removeTodo}>Remove</button
+				on:click={removeTodo}
 			>
+				<i class="gg-trash" />
+			</button>
 		</div>
 	</div>
 </div>
