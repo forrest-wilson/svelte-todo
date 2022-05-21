@@ -31,7 +31,7 @@
 		addNewTodoDialog = false;
 	};
 
-	let handleEnter = (keypress: KeyboardEvent) => {
+	let handleKeypress = (keypress: KeyboardEvent) => {
 		switch (keypress.key) {
 			case 'Enter':
 				addTask();
@@ -52,7 +52,7 @@
 	};
 </script>
 
-<svelte:window on:keydown={handleEnter} />
+<svelte:window on:keydown={handleKeypress} />
 
 <div class="flex flex-row mb-4 border-b-2 pt-4 pb-2 items-center">
 	<Button buttonText="Add Todo" on:click={() => (addNewTodoDialog = true)} class="mr-2" />
@@ -81,7 +81,7 @@
 				<span class="text-grey-700">Task</span>
 				<!-- svelte-ignore a11y-autofocus -->
 				<input
-					on:keyup={handleEnter}
+					on:keyup={handleKeypress}
 					bind:value={newTodo}
 					placeholder="Enter todo"
 					type="text"
