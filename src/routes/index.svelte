@@ -3,7 +3,7 @@
 	import TodoList from '../components/TodoList.svelte';
 </script>
 
-<div class="container mx-auto main-container h-screen">
+<div class="container p-4 mx-auto main-container h-screen">
 	<Toolbar />
 	<TodoList />
 </div>

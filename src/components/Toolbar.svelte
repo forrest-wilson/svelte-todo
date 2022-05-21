@@ -64,7 +64,7 @@
 
 <svelte:window on:keydown={handleKeypress} />
 
-<div class="flex flex-row mb-4 border-b-2 pt-4 pb-2 items-center">
+<div class="flex flex-row mb-4 border-b-2 pb-2 items-center">
 	<Button
 		buttonText="Add Todo"
 		on:click={() => setModalState(true)}
