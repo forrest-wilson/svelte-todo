@@ -27,10 +27,12 @@
 	};
 
 	let drop = (e: DragEvent) => {
-		const indexOfDroppedItem = todos.findIndex((t) => t.id === todo.id);
-		const indexOfDraggedItem = todos.findIndex((t) => t.id === e.dataTransfer?.getData('id'));
+		const toIdx = todos.findIndex((t) => t.id === todo.id);
+		const fromIdx = todos.findIndex((t) => t.id === e.dataTransfer?.getData('id'));
 
-		todos[indexOfDraggedItem] = todos.splice(indexOfDroppedItem, 1, todos[indexOfDraggedItem])[0];
+		const el = todos.splice(fromIdx, 1)[0];
+
+		todos.splice(toIdx, 0, el);
 
 		todoItems.set(todos);
 	};
