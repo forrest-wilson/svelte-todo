@@ -18,7 +18,11 @@
 	};
 
 	let dragStart = (e: DragEvent) => {
-		e.dataTransfer!.dropEffect = 'move';
+		if (!e.dataTransfer) {
+			return;
+		}
+
+		e.dataTransfer.dropEffect = 'move';
 		e.dataTransfer?.setData('id', todo.id);
 	};
 
