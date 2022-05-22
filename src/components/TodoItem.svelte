@@ -22,6 +22,10 @@
 		e.dataTransfer?.setData('id', todo.id);
 	};
 
+	let dragOver = (e: DragEvent) => {
+		e.preventDefault();
+	};
+
 	let drop = (e: DragEvent) => {
 		const indexOfDroppedItem = todos.findIndex((t) => t.id === todo.id);
 		const indexOfDraggedItem = todos.findIndex((t) => t.id === e.dataTransfer?.getData('id'));
@@ -36,8 +40,8 @@
 	class="border border-zinc-100 dark:border-zinc-600 rounded-md shadow-md mb-2 bg-white dark:bg-zinc-800 transition hover:bg-fuchsia-700 group cursor-move hover:scale-[1.05] item"
 	draggable="true"
 	on:dragstart={dragStart}
+	on:dragover={dragOver}
 	on:drop={drop}
-	ondragover="return false"
 >
 	<div class="p-4 flex items-center">
 		<div class="flex-initial">
