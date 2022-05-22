@@ -16,10 +16,28 @@
 
 		todoItems.set(todos);
 	};
+
+	let dragStart = (e: DragEvent) => {
+		e.dataTransfer!.dropEffect = 'move';
+		e.dataTransfer?.setData('id', todo.id);
+	};
+
+	let drop = (e: DragEvent) => {
+		const indexOfDroppedItem = todos.findIndex((t) => t.id === todo.id);
+		const indexOfDraggedItem = todos.findIndex((t) => t.id === e.dataTransfer?.getData('id'));
+
+		todos[indexOfDraggedItem] = todos.splice(indexOfDroppedItem, 1, todos[indexOfDraggedItem])[0];
+
+		todoItems.set(todos);
+	};
 </script>
 
 <div
-	class="border border-zinc-100 dark:border-zinc-600 rounded-md shadow-md mb-2 bg-white dark:bg-zinc-800 transition hover:bg-fuchsia-700 group cursor-pointer hover:scale-[1.05]"
+	class="border border-zinc-100 dark:border-zinc-600 rounded-md shadow-md mb-2 bg-white dark:bg-zinc-800 transition hover:bg-fuchsia-700 group cursor-move hover:scale-[1.05] item"
+	draggable="true"
+	on:dragstart={dragStart}
+	on:drop={drop}
+	ondragover="return false"
 >
 	<div class="p-4 flex items-center">
 		<div class="flex-initial">
@@ -40,3 +58,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.item {
+		user-select: none;
+	}
+</style>
