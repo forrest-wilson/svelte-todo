@@ -6,3 +6,7 @@
 	background: rgb(162 28 175);
 	color: white;
 }
+
+.container-max-w {
+	max-width: 600px;
+}

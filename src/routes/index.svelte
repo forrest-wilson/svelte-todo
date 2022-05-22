@@ -3,13 +3,7 @@
 	import TodoList from '../components/TodoList.svelte';
 </script>
 
-<div class="container p-4 mx-auto main-container h-screen">
+<div class="container p-4 mx-auto container-max-w h-screen">
 	<Toolbar />
 	<TodoList />
 </div>
-
-<style>
-	.main-container {
-		max-width: 600px;
-	}
-</style>

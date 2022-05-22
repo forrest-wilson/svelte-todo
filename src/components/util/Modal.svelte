@@ -10,24 +10,18 @@
 
 {#if isDialogOpen}
 	<div
-		class="fixed top-0 bottom-0 left-0 right-0 opaque-bg"
+		class="fixed top-0 left-0 w-screen h-screen w-screen opaque-bg flex items-center justify-center"
 		on:click|self={() => modalState.set(false)}
 	>
-		<div
-			class="border rounded bg-white container px-6 py-3 absolute pos-center drop-shadow-xl sm:w-auto md:w-1/3"
-		>
-			<slot />
+		<div class="mx-4 flex-1 container-max-w">
+			<div class="border rounded bg-white container px-6 py-3 drop-shadow-xl">
+				<slot />
+			</div>
 		</div>
 	</div>
 {/if}
 
 <style>
-	.pos-center {
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
 	.opaque-bg {
 		background-color: rgba(0, 0, 0, 0.35);
 	}
