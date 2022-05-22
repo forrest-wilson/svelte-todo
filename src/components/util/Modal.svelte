@@ -14,7 +14,7 @@
 		on:click|self={() => modalState.set(false)}
 	>
 		<div class="mx-4 flex-1 container-max-w">
-			<div class="border rounded bg-white container px-6 py-3 drop-shadow-xl">
+			<div class="border rounded-md bg-white container px-6 py-3 drop-shadow-xl">
 				<slot />
 			</div>
 		</div>
