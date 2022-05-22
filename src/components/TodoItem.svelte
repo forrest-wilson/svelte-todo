@@ -37,7 +37,7 @@
 </script>
 
 <div
-	class="border border-zinc-100 dark:border-zinc-600 rounded-md shadow-md mb-2 bg-white dark:bg-zinc-800 transition hover:bg-fuchsia-700 group cursor-move hover:scale-[1.05] item"
+	class="border border-zinc-100 dark:border-zinc-600 rounded-md shadow-md mb-2 bg-white dark:bg-zinc-800 transition hover:bg-fuchsia-700 group cursor-pointer hover:scale-[1.05] item"
 	draggable="true"
 	on:dragstart={dragStart}
 	on:dragover={dragOver}
