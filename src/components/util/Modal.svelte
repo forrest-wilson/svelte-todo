@@ -10,7 +10,7 @@
 
 {#if isDialogOpen}
 	<div
-		class="fixed top-0 left-0 w-screen h-screen w-screen opaque-bg flex items-center justify-center"
+		class="fixed top-0 left-0 w-screen h-screen w-screen opaque-bg flex items-center justify-center z-index"
 		on:click|self={() => modalState.set(false)}
 	>
 		<div class="mx-4 flex-1 container-max-w">
@@ -24,5 +24,9 @@
 <style>
 	.opaque-bg {
 		background-color: rgba(0, 0, 0, 0.35);
+	}
+
+	.z-index {
+		z-index: 1000;
 	}
 </style>
