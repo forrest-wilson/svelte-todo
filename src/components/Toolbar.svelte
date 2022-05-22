@@ -48,16 +48,16 @@
 	<RoundedSwitch state={darkMode} on:checked={handleCheck} />
 </div>
 
-<div class="flex mb-4 items-center">
+<div class="flex mb-4 items-center relative">
 	<!-- svelte-ignore a11y-autofocus -->
 	<input
 		on:keyup={handleKeypress}
 		bind:value={newTodo}
 		placeholder="Enter todo"
 		type="text"
-		class="mr-2 w-full rounded-md"
+		class="mr-2 w-full rounded-md border-zinc-100 dark:border-zinc-600 shadow-md p-4 flex-1"
 		autofocus
 	/>
 
-	<Button buttonText="Add Todo" on:click={addTask} />
+	<Button buttonText="Add Todo" on:click={addTask} class="shadow-md" />
 </div>

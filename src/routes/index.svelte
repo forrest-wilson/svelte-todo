@@ -5,5 +5,14 @@
 
 <div class="container p-4 mx-auto container-max-w">
 	<Toolbar />
+
+	<hr class="my-4 rounded" />
+
 	<TodoList />
 </div>
+
+<style>
+	hr {
+		margin: 10px;
+	}
+</style>
